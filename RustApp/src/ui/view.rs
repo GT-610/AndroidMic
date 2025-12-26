@@ -430,6 +430,30 @@ pub fn settings_window(app: &AppState) -> Element<'_, ConfigMsg> {
             )
             .push(
                 settings::section()
+                    .title(fl!("virtual_microphone"))
+                    .add(
+                        row()
+                            .align_y(Vertical::Center)
+                            .push(text(fl!("virtual_microphone_status")))
+                            .push(horizontal_space())
+                            .push(text(fl!("virtual_microphone_status_not_installed"))),
+                    )
+                    .add(
+                        row()
+                            .align_y(Vertical::Center)
+                            .push(text(fl!("enable_virtual_microphone")))
+                            .push(horizontal_space())
+                            .push(toggler(false).on_toggle(ConfigMsg::ToggleVirtualMicrophone)),
+                    )
+                    .add(
+                        row()
+                            .spacing(10)
+                            .push(button::text(fl!("install_virtual_mic")).on_press(ConfigMsg::InstallVirtualMicrophone))
+                            .push(button::destructive(fl!("uninstall_virtual_mic")).on_press(ConfigMsg::UninstallVirtualMicrophone)),
+                    ),
+            )
+            .push(
+                settings::section()
                     .title(fl!("title_app"))
                     .add_maybe(if cfg!(target_os = "windows") {
                         Some(

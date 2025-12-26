@@ -44,6 +44,13 @@ dereverberation_enabled = Enabled
 
 reset_denoise_settings = Reset Denoise Settings
 
+virtual_microphone = Virtual Microphone
+virtual_microphone_status = Virtual Microphone Status
+virtual_microphone_status_not_installed = Not Installed
+enable_virtual_microphone = Enable Virtual Microphone
+install_virtual_mic = Install Virtual Mic
+uninstall_virtual_mic = Uninstall Virtual Mic
+
 title_app = App
 
 start_at_login = Start at login

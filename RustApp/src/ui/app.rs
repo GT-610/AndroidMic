@@ -709,6 +709,18 @@ impl Application for AppState {
                 ConfigMsg::StartMinimized(start_minimized) => {
                     self.config.update(|s| s.start_minimized = start_minimized);
                 }
+                ConfigMsg::ToggleVirtualMicrophone(enabled) => {
+                    info!("Toggle virtual microphone: {enabled}");
+                    return self.add_log(format!("Toggle virtual microphone: {enabled}").as_str());
+                }
+                ConfigMsg::InstallVirtualMicrophone => {
+                    info!("Install virtual microphone function to be implemented");
+                    return self.add_log("Install virtual microphone function to be implemented");
+                }
+                ConfigMsg::UninstallVirtualMicrophone => {
+                    info!("Uninstall virtual microphone function to be implemented");
+                    return self.add_log("Uninstall virtual microphone function to be implemented");
+                }
             },
             AppMsg::HideWindow => {
                 let mut effects = Vec::new();

@@ -53,6 +53,10 @@ pub enum ConfigMsg {
     Amplify(bool),
     AmplifyValue(f32),
     ToggleAboutWindow,
+    // Virtual microphone related messages
+    ToggleVirtualMicrophone(bool),
+    InstallVirtualMicrophone,
+    UninstallVirtualMicrophone,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Copy)]
